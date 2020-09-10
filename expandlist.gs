@@ -1,16 +1,11 @@
 /**
 General plan: 
-Start with a two-slide presentation. The first slide is a bulleted list of 'things' and the second slide is interesting.
+Start with a two-slide presentation. The first slide is several bulleted lists of 'things' and the second slide is interesting.
 
 First we will copy the second slide for every item in the list
 Next we will link the items to the slide in order, so the 1st list item will be a link to the 1st (zero-up) page, 2nd->2nd, 3rd->3rd, ...
 
-Maybe also add the list item to the title of the copied page?
-
-Maybe helpful links during development:
-Add link - https://developers.google.com/slides/reference/rest/v1/presentations.pages/other#link
-Get stuff on page - https://developers.google.com/apps-script/advanced/slides#read_page_element_object_ids
-
+Also add the list item to the title of the copied page
 
 
 
@@ -33,8 +28,8 @@ function onInstall(e) {
  */
 function onOpen(e) {
   SlidesApp.getUi().createAddonMenu()
-      .addItem('Add list items to title', 'expandListWithNames')
-      .addItem('Just duplicate slides', 'expandListNoNames')
+      .addItem('Add list items to top right corner', 'expandListWithNames')
+      .addItem('Just duplicate and link slides', 'expandListNoNames')
       .addToUi();
 }
 
@@ -45,13 +40,12 @@ function onOpen(e) {
 function expandList(useNames) {
   var presentation = SlidesApp.getActivePresentation();
   var slides = presentation.getSlides();
+  var ui = SlidesApp.getUi(); // Same variations.
   if (1 == slides.length) {
       ui.alert('You need a two-slide deck. The first slide is a list of names and the second slide will be copied and LINKd for each name on the first slide.');
       return;
   }
   if (2 != slides.length) {
-    var ui = SlidesApp.getUi(); // Same variations.
-
     var result = ui.alert(
       'You do not have two slides, drop this down to two slides?',
       'Are you sure you want to delete extra slides?',
@@ -70,29 +64,28 @@ function expandList(useNames) {
       return;
     } 
   }
+  var width = presentation.getPageWidth();
+  var height = presentation.getPageHeight();
+  
   // slides[0] is the list of n things
   // slides[1] is copied to slides[2...n]
-  var slide = slides[0];
-  var elements = slide.getPageElements();
+  var nameSlide = slides[0];
+  var toCopySlide = slides[1];
+  var elements = nameSlide.getPageElements();
   
-  if (2 == elements.length) {
-    var title = elements[0];
-    var body = elements[1];
-    bodyText = body.asShape().getText();
-    bodyList = bodyText.getListParagraphs();
-    
-    //console.log("Title: ", title.asShape().getText().asRenderedString());
+  elements.forEach(function(element) {
+    bodyText = element.asShape().getText();
+    bodyList = bodyText.getListParagraphs(); // or 'bullets' from a list
     
     for (var i = 0; i < bodyList.length; i++) {
-      //console.log("Item: ", i);
-      var newSlide = presentation.appendSlide(slides[1]);
+      var newSlide = presentation.appendSlide(toCopySlide);
       bodyList[i].getRange().getTextStyle().setLinkSlide(newSlide);
       if (useNames) {
-        var newSlideTitle = newSlide.getPageElements()[0];
-        newSlideTitle.asShape().getText().appendText(" - " + bodyList[i].getRange().asRenderedString());
+        var newName = bodyList[i].getRange().asRenderedString();
+        newSlide.insertTextBox(newName, width/2, 5, width/2, 15);
       }
     }
-  }
+  });
 }
 
 function expandListWithNames() {
