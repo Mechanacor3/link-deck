@@ -1,3 +1,5 @@
+![LINK Deck Logo](/LINK_Deck.png)
+
 # Welcome to LINK Deck Pages
 
 The source for this page is is [available on GitHub](https://github.com/Mechanacor3/link-deck/blob/gh-pages/index.md) and the source for the app in question is [also available on GitHub](https://github.com/Mechanacor3/link-deck/blob/master/expandlist.gs). 
@@ -6,6 +8,8 @@ The source for this page is is [available on GitHub](https://github.com/Mechanac
 # What this is
 
 LINK Deck is a plugin to Google Slides that makes the creation of a LINK Deck much easier. In a e-school setting, having the names of students on the first slide and then a unique copy of that slide available for each student enables one document for learning. This builds that :)
+
+![Example slides](/LINK_Deck_Sample.png)
 
 # Support
 
