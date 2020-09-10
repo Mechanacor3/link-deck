@@ -4,7 +4,7 @@ The source for this page is is [available on GitHub](https://github.com/Mechanac
 
 
 # Links to
-* [License](/LICENSE) - GNU GPL3
+* [License](/LICENSE.txt) - GNU GPL3
 * [Privacy Policy](/privacy.md) - I store nothing and use nothing
 
 
