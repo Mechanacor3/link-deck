@@ -3,6 +3,17 @@
 The source for this page is is [available on GitHub](https://github.com/Mechanacor3/link-deck/blob/gh-pages/index.md) and the source for the app in question is [also available on GitHub](https://github.com/Mechanacor3/link-deck/blob/master/expandlist.gs). 
 
 
+# Links to
+* [License](/license.md) - GNU GPL3
+* [Privacy Policy](/privacy.md) - I store nothing and use nothing
+
+
+
+
+
+
+
+
 
 # License
 
