@@ -1,5 +1,6 @@
 ![LINK Deck Logo](/LINK_Deck.png)
 
+
 # Welcome to LINK Deck Pages
 
 The source for this page is is [available on GitHub](https://github.com/Mechanacor3/link-deck/blob/gh-pages/index.md) and the source for the app in question is [also available on GitHub](https://github.com/Mechanacor3/link-deck/blob/master/expandlist.gs). 
@@ -11,6 +12,7 @@ LINK Deck is a plugin to Google Slides that makes the creation of a LINK Deck mu
 
 ![Example slides](/LINK_Deck_Sample.png)
 
+
 # Support
 
 This is a bit of a side project - but I want to help! For feature requests or general support, send an email to <link-deck-support@googlegroups.com> and for advanced users, put in a Issue or Pull request via GitHub.
@@ -19,6 +21,11 @@ This is a bit of a side project - but I want to help! For feature requests or ge
 # License
 
 The LINK Deck code and website are held under GNU General Public License v3.0 - which basically says "do anything you want with the code except make money."  I will also not be making any money from this code. For more details, see the [license here](/LICENSE.md).
+
+
+# Terms of Service
+
+Use of LINK Deck code guaruntees nothing and promises nothing in terms of service. For more details, see the [terms of service](/tos.md).
 
 
 # Privacy Policy
