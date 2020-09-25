@@ -5,6 +5,8 @@
 
 The source for this page is is [available on GitHub](https://github.com/Mechanacor3/link-deck/blob/gh-pages/index.md) and the source for the app in question is [also available on GitHub](https://github.com/Mechanacor3/link-deck/blob/master/expandlist.gs). 
 
+To install - visit the store listing [here](https://gsuite.google.com/marketplace/app/link_deck/697928264790).
+
 
 # What this is
 
